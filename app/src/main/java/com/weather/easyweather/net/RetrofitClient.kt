@@ -2,6 +2,9 @@ package com.weather.easyweather.net
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.weather.easyweather.net.api.Api
+import com.weather.easyweather.net.api.LocationApiFirst
+import com.weather.easyweather.net.api.LocationApiSecond
 import com.weather.easyweather.ui.utils.isDebug
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -42,5 +45,24 @@ object RetrofitClient {
             .build()
             .create(Api::class.java)
     }
+
+    val locationFirstService: LocationApiFirst by lazy {
+        Retrofit.Builder()
+            .client(okhttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(LocationApiFirst.BASE_URL)
+            .build()
+            .create(LocationApiFirst::class.java)
+    }
+
+    val locationSecondService: LocationApiSecond by lazy {
+        Retrofit.Builder()
+            .client(okhttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(LocationApiSecond.BASE_URL)
+            .build()
+            .create(LocationApiSecond::class.java)
+    }
+
 
 }

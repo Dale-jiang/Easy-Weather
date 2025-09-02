@@ -6,7 +6,7 @@ import com.weather.easyweather.net.bean.NetResult
 import com.weather.easyweather.net.repo.WeatherRepository
 import kotlinx.coroutines.launch
 
-class WeatherViewModel : ViewModel() {
+class LocationViewModel : ViewModel() {
 
     private val repository by lazy {
         WeatherRepository()

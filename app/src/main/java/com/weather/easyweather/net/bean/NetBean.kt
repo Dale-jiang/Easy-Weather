@@ -1,4 +1,4 @@
-package com.weather.easyweather.net
+package com.weather.easyweather.net.bean
 
 import androidx.annotation.Keep
 import retrofit2.HttpException

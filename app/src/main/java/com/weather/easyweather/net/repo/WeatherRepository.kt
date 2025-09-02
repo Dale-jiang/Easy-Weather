@@ -1,4 +1,7 @@
-package com.weather.easyweather.net
+package com.weather.easyweather.net.repo
+
+import com.weather.easyweather.net.bean.NetResult
+import com.weather.easyweather.net.bean.WeatherInfoBean
 
 class WeatherRepository : BaseRepository() {
     suspend fun getWeatherData(

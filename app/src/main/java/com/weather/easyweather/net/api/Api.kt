@@ -1,5 +1,7 @@
-package com.weather.easyweather.net
+package com.weather.easyweather.net.api
 
+import com.weather.easyweather.net.bean.ResponseResult
+import com.weather.easyweather.net.bean.WeatherInfoBean
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
