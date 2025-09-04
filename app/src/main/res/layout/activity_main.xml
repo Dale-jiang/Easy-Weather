@@ -13,11 +13,13 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="12dp"
             android:layout_weight="1"
+            android:alpha="0"
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"

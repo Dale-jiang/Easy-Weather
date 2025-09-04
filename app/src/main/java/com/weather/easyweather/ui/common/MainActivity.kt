@@ -33,4 +33,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
 
+    fun setTitleView(alpha: Float) {
+        binding.tvTitle.alpha = alpha
+        if (alpha > 1) binding.tvTitle.alpha = 1f
+    }
+
 }
