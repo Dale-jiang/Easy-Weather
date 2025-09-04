@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/c_main</item>
         <item name="colorPrimary">@color/c_main</item>
     </style>
+
+
+    <style name="TextAppearance.Weather.ExpandedTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>
