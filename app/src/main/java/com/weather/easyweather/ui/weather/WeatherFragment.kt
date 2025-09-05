@@ -32,6 +32,7 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding>(FragmentWeatherBind
 
     private fun setHeaderView() {
         binding.apply {
+
             appbar.addOnOffsetChangedListener { layout, verticalOffset ->
                 val total = layout.totalScrollRange.toFloat().coerceAtLeast(1f)
                 val p = (abs(verticalOffset) / total).coerceIn(0f, 1f)
