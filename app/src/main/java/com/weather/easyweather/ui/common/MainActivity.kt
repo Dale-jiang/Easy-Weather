@@ -4,7 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.weather.easyweather.databinding.ActivityMainBinding
 import com.weather.easyweather.ui.base.BaseActivity
+import com.weather.easyweather.ui.settings.SettingsActivity
 import com.weather.easyweather.ui.utils.edgeToEdge
+import com.weather.easyweather.ui.utils.launchActivity
 import com.weather.easyweather.ui.weather.WeatherFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -19,6 +21,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun initUI() {
         bindViewPager(mFragments)
+    }
+
+    override fun initListeners() {
+        binding.btnMore.setOnClickListener {
+            launchActivity<SettingsActivity>()
+        }
     }
 
     private fun bindViewPager(fragments: List<Fragment>) {
