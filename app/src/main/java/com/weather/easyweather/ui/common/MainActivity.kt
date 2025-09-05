@@ -1,18 +1,28 @@
 package com.weather.easyweather.ui.common
 
+import android.content.Intent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.blankj.utilcode.util.ToastUtils
 import com.weather.easyweather.databinding.ActivityMainBinding
 import com.weather.easyweather.ui.base.BaseActivity
 import com.weather.easyweather.ui.settings.SettingsActivity
 import com.weather.easyweather.ui.utils.edgeToEdge
-import com.weather.easyweather.ui.utils.launchActivity
 import com.weather.easyweather.ui.weather.WeatherFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     override fun onAttachedToWindow() {
         edgeToEdge(parentView = binding.root)
+    }
+
+    private val settingsLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            ToastUtils.showLong("单位变换")
+        }
     }
 
     private val mFragments by lazy {
@@ -25,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun initListeners() {
         binding.btnMore.setOnClickListener {
-            launchActivity<SettingsActivity>()
+            settingsLauncher.launch(Intent(this@MainActivity, SettingsActivity::class.java))
         }
     }
 

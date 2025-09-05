@@ -5,5 +5,7 @@
 
     <string name="str_privacy_amp_policy"><![CDATA[Privacy & Policy]]></string>
     <string name="thermal_unit">Thermal Unit</string>
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
 
 </resources>

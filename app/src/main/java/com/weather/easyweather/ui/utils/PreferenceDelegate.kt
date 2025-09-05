@@ -62,5 +62,7 @@ fun sDouble(key: String? = null, default: Double = 0.0) = PreferenceDelegate(key
 
 var firstLaunchTag by sBoolean(default = true)
 
+var isMetric by sBoolean(default = true)
+
 
 
