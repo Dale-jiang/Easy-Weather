@@ -8,19 +8,21 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:layout_marginTop="14dp"
         app:srcCompat="@drawable/ic_living_dressing" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:layout_marginBottom="12dp"
-        android:text="humidity"
         android:textColor="#CCFFFFFF"
         android:textSize="10sp"
-        tools:ignore="SmallSp" />
+        tools:ignore="SmallSp"
+        tools:text="humidity" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
