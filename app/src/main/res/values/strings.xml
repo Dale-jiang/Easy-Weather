@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Easy Weather</string>
+    <string name="weather_15">View the weather for the last 15 days</string>
 </resources>
