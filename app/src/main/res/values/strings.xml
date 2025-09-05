@@ -7,5 +7,8 @@
     <string name="thermal_unit">Thermal Unit</string>
     <string name="metric">Metric</string>
     <string name="imperial">Imperial</string>
+    <string name="str_location_per">Please grant location permissions to access weather information.</string>
+    <string name="str_gps_per">Please turn on the GPS switch to get accurate weather information.</string>
+    <string name="turn_on">Turn On</string>
 
 </resources>

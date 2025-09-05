@@ -1,9 +1,12 @@
 package com.weather.easyweather.ui.utils
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
+import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Gravity
@@ -60,6 +63,25 @@ fun AppCompatActivity.edgeToEdge(parentView: ViewGroup? = null, topPadding: Bool
 fun Context.hasOverlayPermissionGranted(): Boolean {
     return Settings.canDrawOverlays(this)
 }
+
+private fun Context.isGranted(p: String) =
+    ContextCompat.checkSelfPermission(this, p) == PackageManager.PERMISSION_GRANTED
+
+fun Context.hasLocationPermission(): Boolean {
+    return isGranted(Manifest.permission.ACCESS_COARSE_LOCATION) || isGranted(Manifest.permission.ACCESS_FINE_LOCATION)
+}
+
+fun Context.isGpsEnabled(): Boolean {
+    val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    val hasGps = packageManager.hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS)
+    if (!hasGps) return false
+    return try {
+        lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+    } catch (_: Exception) {
+        false
+    }
+}
+
 
 private val Context.density get() = resources.displayMetrics.density
 
