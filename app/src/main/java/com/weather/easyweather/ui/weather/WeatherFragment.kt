@@ -52,10 +52,24 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding>(FragmentWeatherBind
 
     private fun setWeatherInfo() {
 
+        val irv = binding.indexRecyclerView
+        val indexAdapter = IndexAdapter(requireActivity(), mutableListOf("1", "2", "3", "4", "5", "6"))
+        irv.itemAnimator = null
+        irv.adapter = indexAdapter
+        if (irv.itemDecorationCount == 0) {
+            irv.addItemDecoration(
+                GridDividerDecoration(
+                    spanCount = 2, color = requireActivity().getColor(R.color.c_trans),
+                    sizeDp = 8f, includeEdge = false, drawLastRow = false, drawLastCol = false
+                )
+            )
+        }
+
+
         val lrv = binding.livingRecyclerView
         val adapter = LivingIndexAdapter(requireActivity(), mutableListOf("1", "2", "3", "4", "5", "6"))
-        binding.livingRecyclerView.itemAnimator = null
-        binding.livingRecyclerView.adapter = adapter
+        lrv.itemAnimator = null
+        lrv.adapter = adapter
         if (lrv.itemDecorationCount == 0) {
             lrv.addItemDecoration(
                 GridDividerDecoration(

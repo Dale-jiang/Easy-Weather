@@ -11,5 +11,6 @@
 
     <color name="c_main">#4388FF</color>
     <color name="c_item_divider">#4A75CBFF</color>
+    <color name="c_trans">#00FFFFFF</color>
 
 </resources>
